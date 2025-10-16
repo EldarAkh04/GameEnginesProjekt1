@@ -4,9 +4,11 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D body;
     private bool jumped;
+    private float xPosLastFrame;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpSpeed;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -15,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update(){
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed,body.velocity.y);
+        FlipCharacterX();
 
         
 
@@ -28,6 +31,20 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         jumped = true;
         return jumped;
+    }
+
+    private void FlipCharacterX()
+    {
+        float input = Input.GetAxis("Horizontal");
+        //Rechts
+        if(input > 0 && (transform.position.x > xPosLastFrame)){
+            spriteRenderer.flipX = false;
+        //Links
+        }else if(input < 0 && (transform.position.x < xPosLastFrame)){
+            spriteRenderer.flipX = true;
+        }
+
+        xPosLastFrame = transform.position.x;
     }
 
 } 
