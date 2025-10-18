@@ -35,16 +35,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlipCharacterX()
     {
-        float input = Input.GetAxis("Horizontal");
-        //Rechts
-        if(input > 0 && (transform.position.x > xPosLastFrame)){
-            spriteRenderer.flipX = false;
-        //Links
-        }else if(input < 0 && (transform.position.x < xPosLastFrame)){
-            spriteRenderer.flipX = true;
-        }
+        float x = Input.GetAxisRaw("Horizontal");
+        if (Mathf.Abs(x) > 0.01f)
+            transform.rotation = Quaternion.Euler(0f, x > 0f ? 0f : 180f, 0f);
 
-        xPosLastFrame = transform.position.x;
     }
 
 } 

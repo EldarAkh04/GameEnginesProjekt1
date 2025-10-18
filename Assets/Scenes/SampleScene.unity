@@ -425,7 +425,7 @@ Transform:
   m_GameObject: {fileID: 1774477773}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.42, y: 1.15, z: 0}
+  m_LocalPosition: {x: -6.91, y: -1.36, z: 0}
   m_LocalScale: {x: 0.3252, y: 0.3252, z: 0.3252}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -517,6 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpSpeed: 5
+  spriteRenderer: {fileID: 1774477774}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
