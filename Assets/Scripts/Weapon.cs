@@ -6,11 +6,17 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    private float fireTimer;
+    [Range(0.1f, 2f)]
+    [SerializeField] private float fireRate = 0.5f;
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1")){
+        if(Input.GetButtonDown("Fire1") && fireTimer <= 0f){
             Shoot();
+            fireTimer = fireRate;
+        } else {
+            fireTimer -= Time.deltaTime;
         }
     }
 
