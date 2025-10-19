@@ -4,11 +4,9 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D body;
     private bool jumped;
-    private float xPosLastFrame;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpSpeed;
-    [SerializeField] private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -28,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private bool OnCollisionEnter2D(Collision2D collision){
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         jumped = true;
         return jumped;
     }

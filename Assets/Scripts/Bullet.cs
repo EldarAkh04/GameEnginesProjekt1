@@ -24,12 +24,16 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collide)
     {
         var ShootingBullet = collide.gameObject.name;
-        Debug.Log(ShootingBullet);
+        //Debug.Log(ShootingBullet);
 
 
         if(ShootingBullet == "Square1" || ShootingBullet == "Square2")
         {
             Destroy(gameObject);
+        }
+
+        if(collide.gameObject.GetComponent<Enemy>() != null){
+            Destroy(collide.gameObject);
         }
     }
 }
