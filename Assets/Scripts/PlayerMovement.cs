@@ -25,10 +25,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool OnCollisionEnter2D(Collision2D collision){
+    private void OnCollisionEnter2D(Collision2D collision){
         //Debug.Log(collision.gameObject.name);
         jumped = true;
-        return jumped;
     }
 
     private void FlipCharacterX()
