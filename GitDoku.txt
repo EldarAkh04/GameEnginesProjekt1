@@ -1,0 +1,31 @@
+Um einen Branch mit main zu mergen, muss mann zuerst in dein main branch gehen
+1. Schritt:
+-git checkout main
+
+Danach gibt man den Befehl
+2. Schritt:
+-git merge BranchNamen
+
+So sollte alles von diesem Branch übernommen sein
+
+Doch will man nur eine .py Datei übernehmen, dann muss man als 1. Schritt wieder in den main gehen
+1.Schritt
+-git checkout main
+
+2. Schritt
+-git checkout TestForMerge -- path/to/Test2.py
+
+3. Schritt:
+Nun überprüfen wir die Änderung
+-git status
+-git diff path/to/Test2.py
+
+
+
+GitPush:
+1.Git add Datei
+2.git commit -m "blabla"
+3.git push origin branch name
+
+
+ 
