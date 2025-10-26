@@ -47,18 +47,17 @@ public class Enemy : MonoBehaviour
     } 
 
     private void FlipCharacterX()
-{
-    float moveAxis = Input.GetAxis("Horizontal"); // Unused line
-    Vector3 scale = transform.localScale;
+    {
+        Vector3 scale = transform.localScale;
 
-    if(player.transform.position.x > transform.position.x){
-        scale.x = Mathf.Abs(scale.x) * 1 * (flip ? -1 : 1);
-        //transform .Translate(speed * Time.deltaTime, transform.position.y, transform.position.z);
-    } else {
-        scale.x = Mathf.Abs(scale.x) * -1 * (flip ? -1 : 1);
-        //transform.Translate(speed * Time.deltaTime * -1, transform.position.y, transform.position.z);
+        if(player.transform.position.x > transform.position.x){
+            scale.x = Mathf.Abs(scale.x) * 1 * (flip ? -1 : 1);
+            //transform .Translate(speed * Time.deltaTime, transform.position.y, transform.position.z);
+        } else {
+            scale.x = Mathf.Abs(scale.x) * -1 * (flip ? -1 : 1);
+            //transform.Translate(speed * Time.deltaTime * -1, transform.position.y, transform.position.z);
+        }
+
+        transform. localScale = scale;
     }
-
-    transform. localScale = scale;
-}
 }
