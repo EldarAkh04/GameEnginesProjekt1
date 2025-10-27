@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject swarmerPrefab;
     [SerializeField] private float swarmerInterval = 3.5f;
 
-    private GameObject playerTarget;
+    public GameObject playerTarget;
 
 
     void Start()
@@ -19,6 +19,8 @@ public class EnemySpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(interval);
         GameObject newEnemy = Instantiate(enemy, new Vector2(Random.Range(-5f, 5f), Random.Range(-6f, 6f)), Quaternion.identity);
+        var enemyScript = newEnemy.GetComponent<Enemy>();
+        enemyScript.player = playerTarget;
         StartCoroutine(spawnEnemy(interval, enemy));
     }
 }

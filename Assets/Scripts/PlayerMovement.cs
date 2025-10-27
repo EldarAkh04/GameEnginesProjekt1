@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
         
 
         if(Input.GetKey(KeyCode.Space) && jumped == true){
-            jumped = false;
+            //jumped = false;
             body.velocity = new Vector2(body.velocity.x, jumpSpeed);
         }
     }

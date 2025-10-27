@@ -8,10 +8,19 @@ public class Enemy : MonoBehaviour
     public GameObject player;
     public float speed;
     public bool flip = true;
-    //private SpriteRenderer spriteRenderer;
+
+    public int maxHealth = 40;
+    public int currentHealth;
+    public EnemyHealthBar healthBar;
 
     private float distance;
     private bool stopMoving = false;
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
 
     
 
@@ -24,6 +33,10 @@ public class Enemy : MonoBehaviour
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         }
         FlipCharacterX();
+
+        if(Input.GetKeyDown(KeyCode.Space)){
+            TakeDamage(20);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -59,5 +72,11 @@ public class Enemy : MonoBehaviour
         }
 
         transform. localScale = scale;
+    }
+
+    void TakeDamage(int damage)
+    {
+         currentHealth -= damage;
+         healthBar.SetHealth(currentHealth);
     }
 }
