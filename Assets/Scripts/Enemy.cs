@@ -33,8 +33,14 @@ public class Enemy : MonoBehaviour
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         }
         FlipCharacterX();
+    }
 
-        if(Input.GetKeyDown(KeyCode.Space)){
+
+    void OnTriggerEnter2D(Collider2D collide)
+    {
+        var Enemy = collide.gameObject.name;
+
+        if(Enemy == "Bullet(Clone)"){
             TakeDamage(20);
         }
     }
@@ -42,13 +48,15 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var EnemyCharacter = collision.gameObject.name;
+        Debug.Log(collision.gameObject.name);
 
+        /* if(collision.gameObject.GetComponent<Bullet>() != null){
+            TakeDamage(20);
+        } */
         if(EnemyCharacter == "Player"){
             stopMoving = true;
         }
     }
-
-    
 
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -78,5 +86,9 @@ public class Enemy : MonoBehaviour
     {
          currentHealth -= damage;
          healthBar.SetHealth(currentHealth);
+
+         if(currentHealth <= 0){
+            Destroy(gameObject);
+        }
     }
 }

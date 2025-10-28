@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var EnemyCharacter = collision.gameObject.name;
-        Debug.Log("hallo");
+        //Debug.Log("hallo");
 
         
         if(EnemyCharacter == "Enemy(Clone)" && cooldown >= 2){
