@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public int currentHealth;
     public EnemyHealthBar healthBar;
 
+    public static int KilledEnemiesCount = 0;
+
     private float distance;
     private bool stopMoving = false;
 
@@ -38,6 +40,7 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collide)
     {
+        
         var Enemy = collide.gameObject.name;
 
         if(Enemy == "Bullet(Clone)"){
@@ -48,7 +51,7 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var EnemyCharacter = collision.gameObject.name;
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
 
         /* if(collision.gameObject.GetComponent<Bullet>() != null){
             TakeDamage(20);
@@ -84,11 +87,20 @@ public class Enemy : MonoBehaviour
 
     void TakeDamage(int damage)
     {
-         currentHealth -= damage;
-         healthBar.SetHealth(currentHealth);
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
 
-         if(currentHealth <= 0){
+        if(currentHealth <= 0){
+            ChechIfEnemyDead();
             Destroy(gameObject);
+        }
+    }
+
+    void ChechIfEnemyDead()
+    {
+        if(currentHealth <= 0){
+            Enemy.KilledEnemiesCount++;
+            Debug.Log("Kills: " + Enemy.KilledEnemiesCount);
         }
     }
 }
