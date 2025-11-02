@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class Enemy : MonoBehaviour
     public int currentHealth;
     public EnemyHealthBar healthBar;
 
-    public static int KilledEnemiesCount = 0;
+    public static event Action<int> OnEnemyKilled; 
+    public int scoreValue = 1;
 
     private float distance;
     private bool stopMoving = false;
@@ -22,6 +24,7 @@ public class Enemy : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        //Invoke("Send", 2f);
     }
 
     
@@ -40,7 +43,6 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collide)
     {
-        
         var Enemy = collide.gameObject.name;
 
         if(Enemy == "Bullet(Clone)"){
@@ -99,8 +101,7 @@ public class Enemy : MonoBehaviour
     void ChechIfEnemyDead()
     {
         if(currentHealth <= 0){
-            Enemy.KilledEnemiesCount++;
-            Debug.Log("Kills: " + Enemy.KilledEnemiesCount);
+            OnEnemyKilled?.Invoke(scoreValue); 
         }
     }
 }
