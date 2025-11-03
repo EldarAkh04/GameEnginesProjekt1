@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public int currentHealth;
     public EnemyHealthBar healthBar;
 
-    public static event Action<int> OnEnemyKilled; 
+    public static event Action<int> OneEnemyKilled; 
     public int scoreValue = 1;
 
     private float distance;
@@ -101,7 +101,7 @@ public class Enemy : MonoBehaviour
     void ChechIfEnemyDead()
     {
         if(currentHealth <= 0){
-            OnEnemyKilled?.Invoke(scoreValue); 
+            OneEnemyKilled?.Invoke(scoreValue); 
         }
     }
 }
