@@ -38,5 +38,5 @@ public class EnemySpawner : MonoBehaviour
             Debug.Log("Score wird größer");
             swarmerInterval = 1.5f;
         }
-    }   
+    }
 }
