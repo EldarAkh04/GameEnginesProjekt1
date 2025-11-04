@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update(){
-        if(!PauseMenu.isPaused){
+        if(!PauseMenu.isPaused && !GameOver.isOver){
             body.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed,body.velocity.y);
             FlipCharacterX();
 

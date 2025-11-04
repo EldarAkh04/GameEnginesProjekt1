@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if(!PauseMenu.isPaused){
+        if(!PauseMenu.isPaused && !GameOver.isOver){
             if(Input.GetButtonDown("Fire1") && fireTimer <= 0f){
                 Shoot();
                 fireTimer = fireRate;
