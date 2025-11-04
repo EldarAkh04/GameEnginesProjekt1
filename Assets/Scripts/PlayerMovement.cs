@@ -14,14 +14,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update(){
-        body.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed,body.velocity.y);
-        FlipCharacterX();
+        if(!PauseMenu.isPaused){
+            body.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed,body.velocity.y);
+            FlipCharacterX();
 
-        
+            
 
-        if(Input.GetKey(KeyCode.Space) && jumped == true){
-            jumped = false;
-            body.velocity = new Vector2(body.velocity.x, jumpSpeed);
+            if(Input.GetKey(KeyCode.Space) && jumped == true){
+                jumped = false;
+                body.velocity = new Vector2(body.velocity.x, jumpSpeed);
+            }
         }
     }
 

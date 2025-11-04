@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void InscreSpawnInterval()
     {
-        if(scoreForSpawner >= 3 ){
+        if(scoreForSpawner >= 10 ){
             Debug.Log("Score wird größer");
             swarmerInterval = 1.5f;
         }

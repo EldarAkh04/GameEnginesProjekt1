@@ -12,11 +12,13 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1") && fireTimer <= 0f){
-            Shoot();
-            fireTimer = fireRate;
-        } else {
-            fireTimer -= Time.deltaTime;
+        if(!PauseMenu.isPaused){
+            if(Input.GetButtonDown("Fire1") && fireTimer <= 0f){
+                Shoot();
+                fireTimer = fireRate;
+            } else {
+                fireTimer -= Time.deltaTime;
+            }
         }
     }
 
