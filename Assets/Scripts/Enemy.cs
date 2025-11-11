@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         var Enemy = collide.gameObject.name;
 
         if(Enemy == "Bullet(Clone)"){
-            TakeDamage(20);
+            TakeDamage(15);
         }
     }
 
@@ -101,6 +101,7 @@ public class Enemy : MonoBehaviour
     void ChechIfEnemyDead()
     {
         if(currentHealth <= 0){
+            Debug.Log("Test");
             OneEnemyKilled?.Invoke(scoreValue); 
         }
     }

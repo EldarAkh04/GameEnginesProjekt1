@@ -42,9 +42,11 @@ public class PauseMenu : MonoBehaviour
 
     public void BackToMenu()
     {
-        Debug.Log("Hallo1");
-        Time.timeScale = 1f;  
+        /*  Debug.Log("Hallo1"); */
+        Time.timeScale = 1f;
+        pausePanel.SetActive(false);
         SceneManager.LoadScene("StartMenu"); 
-        Debug.Log("Hallo2");
+        
+        /* Debug.Log("Hallo2"); */
     } 
 }
