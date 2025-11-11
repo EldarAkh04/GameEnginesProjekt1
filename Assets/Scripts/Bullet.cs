@@ -34,14 +34,7 @@ public class Bullet : MonoBehaviour
 
         if (collide.gameObject.GetComponentInParent<Enemy>() != null)
         {
-            // Finde den Gegner (das Parent-Objekt, das das Enemy-Skript hält)
             Enemy enemy = collide.gameObject.GetComponentInParent<Enemy>();
-            
-            // Verursache Schaden im Enemy-Skript
-            // (Wir gehen davon aus, dass Enemy.cs eine TakeDamage-Funktion hat)
-            // enemy.TakeDamage(20); 
-            
-            // Zerstöre das Geschoss
             Destroy(gameObject); 
         }
     }
