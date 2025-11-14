@@ -368,6 +368,7 @@ GameObject:
   - component: {fileID: 7712609303378217115}
   - component: {fileID: 3386271504139074816}
   - component: {fileID: 9128755802303162333}
+  - component: {fileID: -1621501550627933654}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -526,6 +527,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1621501550627933654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331254137624862345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 4d2fd85100000000
+  m_ShapePath:
+  - {x: 0.35141945, y: -1.696829, z: 0}
+  - {x: 0.34611702, y: -1.4314977, z: 0}
+  - {x: 0.34611702, y: -1.2338165, z: 0}
+  - {x: 0.26210213, y: -1.1003817, z: 0}
+  - {x: 0.36094284, y: -0.77914965, z: 0}
+  - {x: 0.24233437, y: -0.6605408, z: 0}
+  - {x: 0.036882877, y: -0.61344564, z: 0}
+  - {x: -0.018532276, y: -0.6027461, z: 0}
+  - {x: -0.029477596, y: -0.5073379, z: 0}
+  - {x: 0.02013731, y: -0.44647908, z: 0}
+  - {x: 0.4133296, y: -0.44748914, z: 0}
+  - {x: 0.44478512, y: -0.3688507, z: 0}
+  - {x: 0.32682753, y: -0.2194376, z: 0}
+  - {x: 0.34068203, y: 0.14456755, z: 0}
+  - {x: 0.5352192, y: 0.33889574, z: 0}
+  - {x: 0.8615694, y: 0.33889574, z: 0}
+  - {x: 0.9716077, y: 0.25173342, z: 0}
+  - {x: 1.0581656, y: 0.12657177, z: 0}
+  - {x: 1.0620975, y: -0.250893, z: 0}
+  - {x: 0.89302444, y: -0.43962538, z: 0}
+  - {x: 0.9786968, y: -0.9125844, z: 0}
+  - {x: 0.9193926, y: -0.9471787, z: 0}
+  - {x: 0.9243345, y: -1.3326572, z: 0}
+  - {x: 0.9737549, y: -1.3326572, z: 0}
+  - {x: 0.97093344, y: -1.6813284, z: 0}
+  - {x: 0.810668, y: -1.6835412, z: 0}
+  - {x: 0.80078363, y: -1.5748168, z: 0}
+  - {x: 0.7167692, y: -1.466092, z: 0}
+  - {x: 0.5932183, y: -1.4117297, z: 0}
+  - {x: 0.56850815, y: -1.5105702, z: 0}
+  - {x: 0.48943567, y: -1.6835414, z: 0}
+  m_ShapePathHash: 840511443
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -87516
+  m_LocalBounds:
+    m_Center: {x: 0.51631, y: -0.67896664, z: 0}
+    m_Extent: {x: 0.5457876, y: 1.0178623, z: 0}
 --- !u!1 &5409089486798591059
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +637,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -8,13 +8,27 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pausePanel;
     public static bool isPaused;
+    public static PauseMenu instance; 
     
     void Start()
     {
         pausePanel.SetActive(false);
     }
 
-    
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)){
@@ -42,11 +56,9 @@ public class PauseMenu : MonoBehaviour
 
     public void BackToMenu()
     {
-        /*  Debug.Log("Hallo1"); */
-        Time.timeScale = 1f;
-        pausePanel.SetActive(false);
+        Debug.Log("Hallo1");
+        Time.timeScale = 1f;  
         SceneManager.LoadScene("StartMenu"); 
-        
-        /* Debug.Log("Hallo2"); */
+        Debug.Log("Hallo2");
     } 
 }

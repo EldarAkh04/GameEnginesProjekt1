@@ -17,14 +17,20 @@ public class GameOver : MonoBehaviour
     void Update()
     {
         if(PlayerHealth.currentHealth <= 0){
-            PauseGame();
+            RestartButton();
         }      
     }
 
-    public void PauseGame()
+    public void RestartButton()
     {
         gameOver.SetActive(true);
         Time.timeScale = 0f;
         isOver = true;
+        
+        
+        if (PauseMenu.instance != null) 
+        {
+            PauseMenu.instance.pausePanel.SetActive(false);
+        }
     }
 }
