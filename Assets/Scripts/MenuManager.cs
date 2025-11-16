@@ -21,4 +21,20 @@ public class MenuManager : MonoBehaviour
 #endif
         Application.Quit();
     }
+
+    public void OnTutorialClick()
+    {
+        if (Tutorial.instance != null)
+        {
+            Tutorial.instance.ShowTutorial();
+        }
+    }
+    
+    public void OnCloseTutorial()
+    {
+        if (Tutorial.instance != null)
+        {
+            Tutorial.instance.LeaveTuorial();
+        }
+    }
 }
