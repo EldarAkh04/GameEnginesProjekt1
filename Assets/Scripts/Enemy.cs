@@ -20,12 +20,28 @@ public class Enemy : MonoBehaviour
     private float distance;
     private bool stopMoving = false;
 
+    public AudioClip ZSound;
+    [SerializeField] AudioSource musicSource;
+
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        //Invoke("Send", 2f);
+
+        if (ZSound != null && musicSource != null)
+        {
+            musicSource.clip = ZSound;
+            musicSource.loop = true;
+            musicSource.Play();
+        }
     }
+
+    /* void playSound()
+    {
+        musicSource.clip = ZSound;
+        musicSource.loop = true;
+        musicSource.Play();
+    } */
 
     
 

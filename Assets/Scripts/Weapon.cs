@@ -9,11 +9,16 @@ public class Weapon : MonoBehaviour
     private float fireTimer;
     [Range(0.1f, 2f)]
     [SerializeField] private float fireRate = 0.5f;
+    [SerializeField] AudioSource musicSource;
+    public AudioClip SSound;
 
     void Update()
     {
         if(!PauseMenu.isPaused && !GameOver.isOver){
             if(Input.GetButtonDown("Fire1") && fireTimer <= 0f){
+                musicSource.clip = SSound;
+                //musicSource.loop = true;
+                musicSource.Play();
                 Shoot();
                 fireTimer = fireRate;
             } else {

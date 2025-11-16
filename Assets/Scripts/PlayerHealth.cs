@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     public static int currentHealth;
     public HealthBar healthBar;
     public float cooldown;
+    [SerializeField] AudioSource musicSource;
+    public AudioClip MSound;
 
     void Start()
     {
@@ -33,6 +35,8 @@ public class PlayerHealth : MonoBehaviour
 
         
         if(EnemyCharacter == "Enemy(Clone)" && cooldown >= 2){
+            musicSource.clip = MSound;
+            musicSource.Play();
             TakeDamage(20);
             cooldown = 0;
         }
