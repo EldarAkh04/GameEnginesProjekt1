@@ -4,8 +4,10 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource CarSource;
+    [SerializeField] AudioSource RainSource;
     public AudioClip BMusic;
     public AudioClip CSound;
+    public AudioClip RSound;
 
     private void Start()
     {
@@ -16,5 +18,9 @@ public class AudioManager : MonoBehaviour
         CarSource.clip = CSound;
         CarSource.loop = true;
         CarSource.Play();
+
+        RainSource.clip = RSound;
+        RainSource.loop = true;
+        RainSource.Play();
     }
 }

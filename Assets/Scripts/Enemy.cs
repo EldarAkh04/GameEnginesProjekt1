@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
         var Enemy = collide.gameObject.name;
 
         if(Enemy == "Bullet(Clone)"){
-            TakeDamage(15);
+            TakeDamage(20);
         }
     }
 

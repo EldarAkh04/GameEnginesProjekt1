@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(swarmerInterval);
-        GameObject newEnemy = Instantiate(enemy, new Vector2(Random.Range(-15f, 15f), 10f), Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemy, new Vector2(Random.Range(-17f, 17f), 10f), Quaternion.identity);
         var enemyScript = newEnemy.GetComponent<Enemy>();
         enemyScript.player = playerTarget;
         StartCoroutine(spawnEnemy(swarmerInterval, enemy));
